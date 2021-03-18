@@ -30,9 +30,9 @@ class ParentPollerUnix(Thread):
         from errno import EINTR
         while True:
             try:
-                if os.getppid() == 1:
-                    get_logger().warning("Parent appears to have exited, shutting down.")
-                    os._exit(1)
+                #if os.getppid() == 1:
+                    #get_logger().warning("Parent appears to have exited, shutting down.")
+                    #os._exit(1)
                 time.sleep(1.0)
             except OSError as e:
                 if e.errno == EINTR:
